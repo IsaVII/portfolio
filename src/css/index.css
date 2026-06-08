@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+:root {
+  --link: #9fd9dd;
+  --linkCurrent: #ffe7f7;
+  --linkHover: #5f435f;
+  --text: #ffffff;
+  --bg-color: rgb(23, 24, 37);
+  --red: #7c1724;
+  --font-size-base: 1rem;
+
+  /*button variables*/
+  --btnColor: #362735;
+  --btnColorHover: #cf94cf;
+  --btn-max-width: 200px;
+  --btn-small-max-width: 130px;
+  --btn-danger-red: #7c1724;
+  --btn-danger-red-hover: #a71c2b;
+
+  /* lowest value is 16px, highest value is 24px, scaling with viewport width */
+  --font-size-md: clamp(1.25rem, 0.61w + 1.1rem, 1.58rem);
+  /* 20px - 25.28px */
+  --font-size-lg: clamp(1.46rem, 1vw + 1.31rem, 1.91rem);
+  /* 25.28px - 33.76px */
+  --font-size-xl: clamp(1.74rem, 1.38vw + 1.85rem, 2.55rem);
+  /* 39.04px - 60px */
+
+  --border-radius: 6px;
+  --border-panel: 30px;
+}
+
+/* 
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+} */
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.text-link {
+  text-decoration: underline;
+}
+
+.text-link:hover {
+  color: var(--linkHover);
+  text-decoration: underline;
+}
+
+.icon-holder {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-holder svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+
+.iconGroup {
+  display: flex;
+  margin-top: 20px;
+}
+
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+
+
+/* **********  HEADER SECTION  *********   */
+#header {
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(24, 18, 32, 1);
+  position: relative;
+}
+
+/*
+* Contact 
+*/
+#contact {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.contact-group {
+  display: grid;
+  grid-template-columns: 30px auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-group a {
+  text-decoration: underline;
+}
+
+#contact a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+/* **********  CENTER SECTION  *********   */
+#center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+
+/* **********  ABOUT SECTION  *********   */
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgba(24, 18, 32, 0.9);
+  padding: 5rem;
+  width: 80%;
+  backdrop-filter: blur(12px);
+}
+
+/* **********  TOOLS SECTION  *********   */
+#tools {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgba(24, 18, 32, 0.9);
+  padding: 5rem;
+  width: 80%;
+  backdrop-filter: blur(12px);
+}
+
+.tools-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+}
+
+.tool-item-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+/* ********* ICON ADJUSTMENTS ********* */
+.tool-icon {
+  width: 38px;
+  height: 38px;
+  color: white;
+}
+
+.mailto {
+  padding-left: 4px;
+  padding-top: 8px;
+}
