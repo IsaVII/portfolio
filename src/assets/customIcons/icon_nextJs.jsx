@@ -1,60 +1,71 @@
-
 const NextJsCustomIcon = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"
-     {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    fill="currentColor"
+    {...props}
+  >
     <mask
       id="mask0"
-      width="180"
-      height="180"
+      width="16"
+      height="16"
       x="0"
       y="0"
       maskUnits="userSpaceOnUse"
       style={{ maskType: "alpha" }}
-    >
-      <circle cx="90" cy="90" r="90" fill="black" />
-    </mask>
-
-    <g mask="url(#mask0)">
-      <circle cx="90" cy="90" r="90" fill="black" />
-
-      <path
-        d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
-        fill="url(#paint0)"
+    />
+    <g clip-path="url(#clip0_53_108)">
+      <circle
+        cx="8"
+        cy="8"
+        r="7.375"
+        fill="black"
+        stroke="var(--ds-gray-1000)"
+        strokewidth="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
-
-      <rect
-        x="115"
-        y="54"
-        width="12"
-        height="72"
-        fill="url(#paint1)"
+      <path
+        d="M10.63 11V5"
+        stroke="url(#paint0_linear_53_108vsxrmxu21)"
+        strokewidth="1.25"
+        stroke-miterlimit="1.41421"
+      />
+      <path
+        fill-rule="evenodd"
+        cliprule="evenodd"
+        d="M5.995 5.00087V5H4.745V11H5.995V6.96798L12.3615 14.7076C12.712 14.4793 13.0434 14.2242 13.353 13.9453L5.99527 5.00065L5.995 5.00087Z"
+        fill="url(#paint1_linear_53_108vsxrmxu21)"
       />
     </g>
-
     <defs>
       <linearGradient
-        id="paint0"
-        x1="109"
-        y1="116.5"
-        x2="144.5"
-        y2="160.5"
+        id="paint0_linear_53_108vsxrmxu21"
+        x1="11.13"
+        y1="5"
+        x2="11.13"
+        y2="11"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="white" />
-        <stop offset="1" stopColor="white" stopOpacity="0" />
+        <stop stop-color="white" />
+        <stop offset="0.609375" stop-color="white" stop-opacity="0.57" />
+        <stop offset="0.796875" stop-color="white" stop-opacity="0" />
+        <stop offset="1" stop-color="white" stop-opacity="0" />
       </linearGradient>
-
       <linearGradient
-        id="paint1"
-        x1="121"
-        y1="54"
-        x2="120.799"
-        y2="106.875"
+        id="paint1_linear_53_108vsxrmxu21"
+        x1="9.9375"
+        y1="9.0625"
+        x2="13.5574"
+        y2="13.3992"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="white" />
-        <stop offset="1" stopColor="white" stopOpacity="0" />
+        <stop stop-color="white" />
+        <stop offset="1" stop-color="white" stop-opacity="0" />
       </linearGradient>
+      <clipPath id="clip0_53_108">
+        <rect width="16" height="16" fill="red" />
+      </clipPath>
     </defs>
   </svg>
 );

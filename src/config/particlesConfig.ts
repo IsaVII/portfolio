@@ -1,17 +1,8 @@
 const particlesConfig = {
   particles: {
-    color: {
-      value: ["#96f3ff", "#ccc8ff", "#ffd6f5", "#8fc9ff"],
-    },
-
-    twinkle: {
-      particles: {
-        enable: true,
-        frequency: 0.05,
-        opacity: 1,
-        color: {
-          value: "#ffffff",
-        },
+    paint: {
+      color: {
+        value: ["#96f3ff", "#ccc8ff", "#ffd6f5", "#8fc9ff"],
       },
     },
 
@@ -28,21 +19,21 @@ const particlesConfig = {
     },
 
     number: {
-      value: 120,
+      value: 200,
     },
 
     links: {
       enable: true,
       distance: 150,
       color: {
-        value: ["#b8f7ff", "#aea8ff", "#ffa9e9", "#e0f8ff"],
+        value: ["#96f3ff", "#ccc8ff", "#ffd6f5", "#8fc9ff"],
       },
       opacity: 0.3,
     },
 
     move: {
       enable: true,
-      speed: 0.2,
+      speed: { min: 0.2, max: 0.5 },
     },
   },
 

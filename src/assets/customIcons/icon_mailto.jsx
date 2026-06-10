@@ -5,6 +5,15 @@ const MailToCustomIcon = (props) => (
     fill="currentColor"
     {...props}
   >
+    <mask
+      id="mask0"
+      width="32"
+      height="32"
+      x="0"
+      y="0"
+      maskUnits="userSpaceOnUse"
+      style={{ maskType: "alpha" }}
+    />
     <g
       id="Page-1"
       stroke="none"

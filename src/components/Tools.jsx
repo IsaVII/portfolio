@@ -5,8 +5,12 @@ const Icon = ({ name }) => icons[name] ?? null;
 export default function Tools() {
   return (
     <>
-      <section id="tools">
+      <section id="tools" className="section">
         <h2 className="section-title">Tools</h2>
+        <span id="tools-note">
+          * indicates tools I'm currently learning or have basic experience
+          with.
+        </span>
         <div className="tools-list">
           <span className="tool-item-pair">
             <Icon name="Csharp" />
@@ -20,10 +24,9 @@ export default function Tools() {
 
           <span className="tool-item-pair">
             <Icon name="Python" />
-            <span className="tool-item">Python</span>
+            <span className="tool-item">Python*</span>
           </span>
         </div>
-
         <div className="tools-list">
           <span className="tool-item-pair">
             <Icon name="Html5" />
@@ -35,7 +38,7 @@ export default function Tools() {
           </span>
           <span className="tool-item-pair">
             <Icon name="Javascript" />
-            <span className="tool-item">JavaScript</span>
+            <span className="tool-item">JavaScript*</span>
           </span>
         </div>
         <div className="tools-list">
@@ -60,7 +63,6 @@ export default function Tools() {
             <span className="tool-item">MongoDB*</span>
           </span>
         </div>
-
         <div className="tools-list">
           <span className="tool-item-pair">
             <Icon name="UnrealEngine" />
