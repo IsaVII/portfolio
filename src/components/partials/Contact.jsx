@@ -26,7 +26,7 @@ export default function Contact() {
           <div className="icon-holder mailto">
             <Icon name="MailTo" />
           </div>
-          isahellstroem@gmail.com
+          <span className="contact-label">isahellstroem@gmail.com</span>
         </div>
       </a>
     </section>

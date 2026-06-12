@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "name": "Hexavale",
+    "date": "2025-2026",
+    "thumbnail": "images/projects/Hexavale/Hexavale_Logo_White.png",
+    "imageUrl": ["images/projects/Hexavale/Hexavale_1.png",
+    "images/projects/Hexavale/Hexavale_2.png",
+    "images/projects/Hexavale/Hexavale_3.png"],
+    "gameUrl": "https://store.steampowered.com/app/3872220/Hexavale/",
+    "gamePlattform": "Steam",
+    "tags": ["C++", "Blueprints", "PC", "3D", "Unreal Engine"],
+    "company": "Moon Flame Games",
+    "companyUrl": "",
+    "role": "Developer (solo project)",
+    "type": "Puzzle-Strategy",
+    "description": "Create worlds and reach the top of the highscore.",
+    "bulletPoints": [
+      "Procedural tile generation with draw-call efficiency.",
+      "Steam integration for achievements and leaderboards.",
+      "Full stack development of game systems and mechanics."
+    ]
+  },
+   {
+    "id": 2,
+    "name": "Desert Flower",
+    "date": "2024-2026 | 14 months, part time",
+    "thumbnail": "images/projects/DesertFlower/DesertFlower_Title.png",
+    "imageUrl": ["images/projects/DesertFlower/DesertFlower4.png",
+    "images/projects/DesertFlower/DesertFlower3.png",
+    "images/projects/DesertFlower/DesertFlower5.png"
+        ],
+    "gameUrl": "",
+    "gamePlattform": "",
+    "tags": ["C++", "Blueprints", "PC", "Steam Deck", "3D", "Unreal Engine"],
+    "company": "Studio Northshade",
+    "companyUrl": "https://northshade.se/",
+    "role": "Programmer, Technical Designer",
+    "type": "Adventure-RPG",
+    "description": "Create worlds and reach the top of the highscore.",
+    "bulletPoints": [
+      "Performance optimization for procedural plants of 30%.",
+      "Custom editor tools for level design and world building.",
+      "Full stack development from prototype features to final game systems.",
+      "Balanced level, ability and plant design."
+    ]
+  },
+     {
+    "id": 3,
+    "name": "Karma and Jonar - The Rock Trolls",
+    "date": "2025 | 6 months, part time",
+    "thumbnail": "images/projects/KarmaAndJonar/K+JonarTitle.jpg",
+    "imageUrl": ["images/projects/KarmaAndJonar/KJ_01.png",
+    "images/projects/KarmaAndJonar/KJ_02.png",
+    "images/projects/KarmaAndJonar/KJ_03.png"
+        ],
+    "gameUrl": "https://store.steampowered.com/app/3580060/Karma_and_Jonar__The_Rock_Trolls/",
+    "gamePlattform": "Steam",
+    "tags": ["Blueprints", "PC", "Steam Deck", "3D", "Unreal Engine"],
+    "company": "Glimeria Studios",
+    "companyUrl": "https://www.glimeriastudios.com/gameplaydemo",
+    "role": "Lead-Programmer, Technical Designer",
+    "type": "Co-op Adventure",
+    "description": "Online Co-op adventure based on the book series \"Karma & Jonar\".",
+    "bulletPoints": [
+      "Engineered a prototype architecture for online-multiplayer coop.",
+      "Enemy AI logic.",
+      "Command Pattern system for designer-friendly, decoupled event handling.",
+      "Custom Dialogue System and dynamic sequencer cinematics.",
+      "Optimization: Using Nanite to optimize game performance with movie-ready assets"
+    ]
+  },
+     {
+    "id": 4,
+    "name": "Magical Harvest",
+    "date": "2023-2024",
+    "thumbnail": "images/projects/MagicalHarvest/MagicalHarvest_Title.png",
+    "imageUrl": ["images/projects/MagicalHarvest/MH_Screenshot_MagicalForest.png",
+    "images/projects/MagicalHarvest/MH_Screenshot_Farm.png",
+    "images/projects/MagicalHarvest/MH_Screenshot_Seasons.png",
+    "images/projects/MagicalHarvest/MH_Screenshot_Inventory.png"
+        ],
+    "gameUrl": "https://store.steampowered.com/app/1906970/Magical_Harvest/",
+    "gamePlattform": "Steam",
+    "tags": ["C++", "PC", "Steam Deck", "3D", "Unreal Engine"],
+    "company": "Moon Flame Games",
+    "companyUrl": "",
+    "role": "Developer (solo project)",
+    "type": "Farming Simulation",
+    "description": "Farming game with magic, seasons and romance. Transitioned to Unreal Engine from a 2-year development in Unity.",
+    "bulletPoints": [
+      "Gameplay Systems: Developed inventory, decoration, farming, magic, and character customization systems. ",
+      "World Building: Built a time-of-day and seasonal system and optimized asset management.",
+      "AI and Tools: Created NPC/Animal AI and custom Unreal Editor tools to improve productivity."
+    ]
+  }
+]

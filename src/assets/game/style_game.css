@@ -1,0 +1,251 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #1a1a2e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    padding-top: 5px;
+}
+
+
+.ui {
+    display: flex;
+    justify-content: space-between;
+    width: 480px;
+}
+
+#grid {
+    height: 432px;
+    width: 480px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(images/bg.png);
+    background-size: cover;
+    position: relative;
+    padding: 0;
+}
+
+#grid div {
+    height: 48px;
+    width: 48px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.going-right,
+.going-left,
+.going-down,
+.going-up {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    z-index: 10;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.going-right {
+    background-image: url(images/move_r.png);
+}
+
+.going-left {
+    background-image: url(images/move_l.png);
+}
+
+.going-down {
+    background-image: url(images/move_d.png);
+}
+
+.going-up {
+    background-image: url(images/move_t.png);
+}
+
+
+.diglett,
+.butterfree {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    z-index: 10;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.diglett {
+    background-image: url(images/diglett.png);
+
+}
+
+.butterfree {
+    background-image: url(images/butterfree.png);
+}
+
+.left-wall {
+    background-image: url(images/wall_l.png);
+}
+
+.right-wall {
+    background-image: url(images/wall_r.png);
+}
+
+.bottom-wall {
+    background-image: url(images/wall_b.png);
+}
+
+.top-wall {
+    background-image: url(images/wall_t.png);
+}
+
+.top-right-wall {
+    background-image: url(./images/wall_t_r.jpg);
+}
+
+.top-left-wall {
+    background-image: url(./images/wall_t_l.png);
+}
+
+.bottom-right-wall {
+    background-image: url(./images/wall_b_r.png);
+}
+
+.bottom-left-wall {
+    background-image: url(./images/wall_b_l.png);
+}
+
+.left-door {
+    background-image: url(./images/door_l.png);
+}
+
+.top-door {
+    background-image: url(./images/door_t.png);
+}
+
+.right-door {
+    background-image: url(./images/door_r.png);
+}
+
+.bottom-door {
+    background-image: url(./images/door_b.png);
+}
+
+
+.bush {
+    background-image: url(./images/bush.png);
+}
+
+.tree {
+    background-image: url(./images/tree.png );
+}
+
+.goal {
+    background-image: url(./images/goal.png);
+}
+
+.pokeball {
+    background-image: url(./images/pokeball.png);
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+@keyframes pokeball-miss {
+    0% {
+        transform: translateY(-60px) rotate(-20deg);
+        opacity: 1;
+    }
+
+    40% {
+        transform: translateY(0px) rotate(5deg);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes pokeball-hit {
+    0% {
+        transform: translateY(-60px) rotate(-20deg);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateY(0px) rotate(10deg);
+        opacity: 1;
+    }
+
+    45% {
+        transform: translateY(0px) rotate(-15deg);
+    }
+
+    60% {
+        transform: translateY(0px) rotate(12deg);
+    }
+
+    72% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+
+    82% {
+        transform: translateY(0px) rotate(0deg) scale(1.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(0);
+        opacity: 0;
+    }
+}
+
+
+.being-captured {
+    transition: left 0.3s ease-in, top 0.3s ease-in, transform 0.3s ease-in;
+    transform: scale(0);
+}
+
+
+#temp-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 300px;
+    min-height: 120px;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 9999999;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.8);
+}

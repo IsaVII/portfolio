@@ -7,10 +7,7 @@ export default function Tools() {
     <>
       <section id="tools" className="section">
         <h2 className="section-title">Tools</h2>
-        <span id="tools-note">
-          * indicates tools I'm currently learning or have basic experience
-          with.
-        </span>
+
         <div className="tools-list">
           <span className="tool-item-pair">
             <Icon name="Csharp" />
@@ -74,6 +71,10 @@ export default function Tools() {
             <span className="tool-item">Unity</span>
           </span>
         </div>
+        <span id="tools-note">
+          * indicates tools I'm currently learning or have basic experience
+          with.
+        </span>
       </section>
     </>
   );

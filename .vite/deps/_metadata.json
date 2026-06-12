@@ -1,0 +1,92 @@
+{
+  "hash": "2efc0347",
+  "configHash": "792c4de5",
+  "lockfileHash": "ff039931",
+  "browserHash": "155df647",
+  "optimized": {
+    "@thesvg/react": {
+      "src": "../../node_modules/@thesvg/react/dist/index.js",
+      "file": "@thesvg_react.js",
+      "fileHash": "2a484cf3",
+      "needsInterop": false
+    },
+    "@tsparticles/engine": {
+      "src": "../../node_modules/@tsparticles/engine/browser/index.js",
+      "file": "@tsparticles_engine.js",
+      "fileHash": "9d9545be",
+      "needsInterop": false
+    },
+    "@tsparticles/slim": {
+      "src": "../../node_modules/@tsparticles/slim/browser/index.js",
+      "file": "@tsparticles_slim.js",
+      "fileHash": "2a514c45",
+      "needsInterop": false
+    },
+    "@tsparticles/updater-twinkle": {
+      "src": "../../node_modules/@tsparticles/updater-twinkle/browser/index.js",
+      "file": "@tsparticles_updater-twinkle.js",
+      "fileHash": "0f74bf0c",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "f126a4b7",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "d2afdc60",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "339a6026",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "BlendPluginInstance-8QZpESuI": {
+      "file": "BlendPluginInstance-8QZpESuI.js",
+      "isDynamicEntry": true
+    },
+    "Container-C1VHJSl3": {
+      "file": "Container-C1VHJSl3.js",
+      "isDynamicEntry": true
+    },
+    "ImagePreloaderInstance-Bkwxayr5": {
+      "file": "ImagePreloaderInstance-Bkwxayr5.js",
+      "isDynamicEntry": true
+    },
+    "InteractivityConstants-Cbe_hBA7": {
+      "file": "InteractivityConstants-Cbe_hBA7.js",
+      "isDynamicEntry": false
+    },
+    "InteractivityPluginInstance-BIKrUnWg": {
+      "file": "InteractivityPluginInstance-BIKrUnWg.js",
+      "isDynamicEntry": true
+    },
+    "LinkInstance-DBP-A9la": {
+      "file": "LinkInstance-DBP-A9la.js",
+      "isDynamicEntry": true
+    },
+    "MovePluginInstance-CeV-jMKA": {
+      "file": "MovePluginInstance-CeV-jMKA.js",
+      "isDynamicEntry": true
+    },
+    "OverlapPluginInstance-CtmSWvB1": {
+      "file": "OverlapPluginInstance-CtmSWvB1.js",
+      "isDynamicEntry": true
+    },
+    "browser-BxZifKFO": {
+      "file": "browser-BxZifKFO.js",
+      "isDynamicEntry": false
+    },
+    "react-DiA8Tu0S": {
+      "file": "react-DiA8Tu0S.js",
+      "isDynamicEntry": false
+    }
+  }
+}

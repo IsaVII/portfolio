@@ -20,6 +20,16 @@ import MailToCustomIcon from "./customIcons/icon_mailto.jsx";
 
 import { Linkedin } from "@thesvg/react";
 
+<<<<<<< Updated upstream
+=======
+import HomeCustomIcon from "./customIcons/icon_home.jsx";
+import PersonCustomIcon from "./customIcons/icon_person.jsx";
+import ClockCustomIcon from "./customIcons/icon_clock.jsx";
+import GameControllerCustomIcon from "./customIcons/icon_gameController.jsx";
+
+import { Steam } from "@thesvg/react";
+
+>>>>>>> Stashed changes
 function ToolIcon({ Icon }) {
   return <Icon className="tool-icon" />;
 }
@@ -46,4 +56,14 @@ export const icons = {
   Document: <ToolIcon Icon={DocumentCustomIcon} />,
   MailTo: <ToolIcon Icon={MailToCustomIcon} />,
   Linkedin: <ToolIcon Icon={Linkedin} />,
+<<<<<<< Updated upstream
+=======
+
+  Home: <ToolIcon Icon={HomeCustomIcon} />,
+  Person: <ToolIcon Icon={PersonCustomIcon} />,
+  Clock: <ToolIcon Icon={ClockCustomIcon} />,
+  GameController: <ToolIcon Icon={GameControllerCustomIcon} />,
+
+  Steam: <ToolIcon Icon={Steam} />,
+>>>>>>> Stashed changes
 };

@@ -1,4 +1,4 @@
-import ZeldaGame from "../assets/game/zeldagame";
+import Game from "../assets/game/Game.jsx";
 
 export default function About() {
   return (
@@ -8,10 +8,10 @@ export default function About() {
 
         <div className="about-wrapper">
           <div className="container-left">
-            <ZeldaGame />
+            <Game />
           </div>
 
-          <div className="container-right">
+          <div className="container-right" id="about-content">
             <p className="section-content header">
               Hi, I'm <b>Isa</b>,
             </p>
