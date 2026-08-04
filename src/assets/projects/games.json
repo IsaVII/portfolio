@@ -3,10 +3,10 @@
     "id": 1,
     "name": "Hexavale",
     "date": "2025-2026",
-    "thumbnail": "images/projects/Hexavale/Hexavale_Logo_White.png",
-    "imageUrl": ["images/projects/Hexavale/Hexavale_1.png",
-    "images/projects/Hexavale/Hexavale_2.png",
-    "images/projects/Hexavale/Hexavale_3.png"],
+    "thumbnail": "images/projects/Hexavale/Hexavale_Logo_White.webp",
+    "imageUrl": ["images/projects/Hexavale/Hexavale_1.webp",
+    "images/projects/Hexavale/Hexavale_2.webp",
+    "images/projects/Hexavale/Hexavale_3.webp"],
     "gameUrl": "https://store.steampowered.com/app/3872220/Hexavale/",
     "gamePlattform": "Steam",
     "tags": ["C++", "Blueprints", "PC", "3D", "Unreal Engine"],
@@ -25,10 +25,10 @@
     "id": 2,
     "name": "Desert Flower",
     "date": "2024-2026 | 14 months, part time",
-    "thumbnail": "images/projects/DesertFlower/DesertFlower_Title.png",
-    "imageUrl": ["images/projects/DesertFlower/DesertFlower4.png",
-    "images/projects/DesertFlower/DesertFlower3.png",
-    "images/projects/DesertFlower/DesertFlower5.png"
+    "thumbnail": "images/projects/DesertFlower/DesertFlower_Title.webp",
+    "imageUrl": ["images/projects/DesertFlower/DesertFlower4.webp",
+    "images/projects/DesertFlower/DesertFlower3.webp",
+    "images/projects/DesertFlower/DesertFlower5.webp"
         ],
     "gameUrl": "",
     "gamePlattform": "",
@@ -37,7 +37,7 @@
     "companyUrl": "https://northshade.se/",
     "role": "Programmer, Technical Designer",
     "type": "Adventure-RPG",
-    "description": "Create worlds and reach the top of the highscore.",
+    "description": "RPG-Adventure with procedural plants as a core gameplay mechanic to solve puzzles and explore the world.",
     "bulletPoints": [
       "Performance optimization for procedural plants of 30%.",
       "Custom editor tools for level design and world building.",
@@ -50,9 +50,9 @@
     "name": "Karma and Jonar - The Rock Trolls",
     "date": "2025 | 6 months, part time",
     "thumbnail": "images/projects/KarmaAndJonar/K+JonarTitle.jpg",
-    "imageUrl": ["images/projects/KarmaAndJonar/KJ_01.png",
-    "images/projects/KarmaAndJonar/KJ_02.png",
-    "images/projects/KarmaAndJonar/KJ_03.png"
+    "imageUrl": ["images/projects/KarmaAndJonar/KJ_01.webp",
+    "images/projects/KarmaAndJonar/KJ_02.webp",
+    "images/projects/KarmaAndJonar/KJ_03.webp"
         ],
     "gameUrl": "https://store.steampowered.com/app/3580060/Karma_and_Jonar__The_Rock_Trolls/",
     "gamePlattform": "Steam",
@@ -74,11 +74,11 @@
     "id": 4,
     "name": "Magical Harvest",
     "date": "2023-2024",
-    "thumbnail": "images/projects/MagicalHarvest/MagicalHarvest_Title.png",
-    "imageUrl": ["images/projects/MagicalHarvest/MH_Screenshot_MagicalForest.png",
-    "images/projects/MagicalHarvest/MH_Screenshot_Farm.png",
-    "images/projects/MagicalHarvest/MH_Screenshot_Seasons.png",
-    "images/projects/MagicalHarvest/MH_Screenshot_Inventory.png"
+    "thumbnail": "images/projects/MagicalHarvest/MagicalHarvest_Title.webp",
+    "imageUrl": ["images/projects/MagicalHarvest/MH_Screenshot_MagicalForest.webp",
+    "images/projects/MagicalHarvest/MH_Screenshot_Farm.webp",
+    "images/projects/MagicalHarvest/MH_Screenshot_Seasons.webp",
+    "images/projects/MagicalHarvest/MH_Screenshot_Inventory.webp"
         ],
     "gameUrl": "https://store.steampowered.com/app/1906970/Magical_Harvest/",
     "gamePlattform": "Steam",
@@ -92,6 +92,5 @@
       "Gameplay Systems: Developed inventory, decoration, farming, magic, and character customization systems. ",
       "World Building: Built a time-of-day and seasonal system and optimized asset management.",
       "AI and Tools: Created NPC/Animal AI and custom Unreal Editor tools to improve productivity."
-    ]
-  }
+    ]}
 ]

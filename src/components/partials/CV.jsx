@@ -7,13 +7,23 @@ const BASE = import.meta.env.BASE_URL;
 export default function CV() {
   return (
     <>
-      <button
-        id="cv-button"
-        onClick={() => window.open(`${BASE}CV_IsaHellström.pdf`, "_blank")}
-      >
-        <span id="cv-button-text">View My CV</span>
-        <Icon name="Document" />
-      </button>
+      <div id="cv-container">
+        <button
+          id="github-button"
+          onClick={() => window.open("https://github.com/IsaVII", "_blank")}
+          title="Visit Portfolio"
+        >
+          <Icon name="Github" />
+          <span id="github-button-text">GitHub</span>
+        </button>
+        <button
+          id="cv-button"
+          onClick={() => window.open(`${BASE}CV_IsaHellström.pdf`, "_blank")}
+        >
+          <span id="cv-button-text">View My CV</span>
+          <Icon name="Document" />
+        </button>
+      </div>
     </>
   );
 }

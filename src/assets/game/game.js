@@ -1,12 +1,8 @@
-import {
-  TILE_CLASSES,
-  ENEMY_CHARS,
-  hasSquareBlockingElements,
-  isDoorChar,
-} from "./maps/mapElements.js";
-import { createEnemy, moveEnemies } from "./enemies/enemies.js";
-import { maps } from "./maps/maps.js";
+import { hasSquareBlockingElements } from "./maps/mapElements.js";
+import { moveEnemies } from "./enemies/enemies.js";
 import { messages } from "./data/ui_data.js";
+import { createPlayerController } from "./player.js";
+import { createMapController } from "./map.js";
 
 export function initGame() {
   const grid = document.getElementById("grid");
@@ -17,197 +13,48 @@ export function initGame() {
   const width = 10;
   const tileSize = 48;
 
-  const squares = [];
+  let squares = [];
   let score = 0;
   let currentMapId = 1;
-  let playerPosition = 22;
   let enemies = [];
-  let playerDirection = "down";
   let gameRunning = true;
+  let canThrowBall = true;
 
-  const mapStates = {};
+  // Initialize controllers
+  const mapController = createMapController({ grid, width, tileSize });
+  const playerController = createPlayerController({
+    grid,
+    width,
+    tileSize,
+    getMapById: mapController.getMapById,
+    checkPlayerEnemyCollision,
+    canMoveTo,
+    showTemporaryMessage,
+    messages,
+  });
 
-  function getMapById(id) {
-    return maps.find((m) => m.id === id) || maps[0];
-  }
-
-  function initMapState(id) {
-    if (!mapStates[id]) {
-      mapStates[id] = {
-        enemiesCleared: false,
-      };
-    }
-    return mapStates[id];
-  }
-
-  function createBoard() {
+  function createBoardCallback() {
     gameRunning = true;
-    grid.innerHTML = "";
-    squares.length = 0;
-    enemies = [];
+    squares = mapController.createBoard(
+      currentMapId,
+      playerController.setPlayerPosition,
+      playerController.setPlayerDirection,
+      enemies,
+      updateDisplay,
+    );
 
-    const currentMap = getMapById(currentMapId).layout;
-    const state = initMapState(currentMapId);
-
-    for (let i = 0; i < 9; i++) {
-      for (let j = 0; j < 10; j++) {
-        const square = document.createElement("div");
-        square.setAttribute("id", i * width + j);
-        const char = currentMap[i][j];
-
-        if (isDoorChar(char)) {
-          square.style.zIndex = 0;
-        } else {
-          square.style.zIndex = i * width + j;
-        }
-
-        addMapElement(square, char, j, i, state.enemiesCleared);
-
-        grid.appendChild(square);
-        squares.push(square);
-      }
-    }
-
-    createPlayer();
+    playerController.createPlayer();
     updateDisplay();
   }
 
-  //PLAYER
-  function createPlayer() {
-    const existingPlayer = document.getElementById("player");
-    if (existingPlayer) {
-      if (existingPlayer.parentNode) {
-        existingPlayer.parentNode.removeChild(existingPlayer);
-      }
-    }
-
-    const playerElement = document.createElement("div");
-    playerElement.className = `going-${playerDirection}`;
-    playerElement.id = "player";
-
-    playerElement.style.left = `${(playerPosition % width) * tileSize}px`;
-    playerElement.style.top = `${Math.floor(playerPosition / width) * tileSize}px`;
-    playerElement.style.zIndex = Math.floor(playerPosition / width) * width;
-
-    grid.appendChild(playerElement);
-  }
-
-  function movePlayer(direction) {
-    const playerElement = document.getElementById("player");
-    let newPosition = playerPosition;
-
-    switch (direction) {
-      case "left":
-        if (playerPosition % width !== 0) newPosition = playerPosition - 1;
-        playerElement.className = "going-left";
-        playerDirection = "left";
-        break;
-
-      case "right":
-        if (playerPosition % width !== width - 1)
-          newPosition = playerPosition + 1;
-        playerElement.className = "going-right";
-        playerDirection = "right";
-        break;
-
-      case "up":
-        if (playerPosition - width >= 0) newPosition = playerPosition - width;
-        playerElement.className = "going-up";
-        playerDirection = "up";
-        break;
-      case "down":
-        if (playerPosition + width < width * 9)
-          newPosition = playerPosition + width;
-        playerElement.className = "going-down";
-        playerDirection = "down";
-        break;
-    }
-
-    if (canMoveTo(newPosition)) {
-      const square = squares[newPosition];
-      const activeMap = getMapById(currentMapId);
-
-      let doorKey = null;
-      if (square.classList.contains("left-door")) doorKey = "door-l";
-      if (square.classList.contains("top-door")) doorKey = "door-t";
-      if (square.classList.contains("right-door")) doorKey = "door-r";
-      if (square.classList.contains("bottom-door")) doorKey = "door-b";
-
-      if (doorKey && activeMap.doors && activeMap.doors[doorKey]) {
-        const doorConfig = activeMap.doors[doorKey];
-
-        // Block forward/up progression if enemies still exist
-        // if (enemies.length > 0) {
-        //   showEnemiesRemainingMessaage();
-        //   return;
-        // }
-
-        switchMap(doorConfig.nextMapId, doorKey);
-        return;
-      }
-
-      playerPosition = newPosition;
-
-      playerElement.style.left = `${(playerPosition % width) * tileSize}px`;
-      playerElement.style.top = `${Math.floor(playerPosition / width) * tileSize}px`;
-      playerElement.style.zIndex = Math.floor(playerPosition / width) * width;
-
-      if (square.classList.contains("goal")) {
-        showTemporaryMessage(`${messages.YouWin} ${score}`, "green", 100000);
-
-        gameRunning = false;
-
-        square.classList.remove("goal");
-        square.classList.add(" ");
-        return;
-      }
-
-      checkPlayerEnemyCollision();
-    }
-  }
-
-  const handleKeyDown = (e) => {
-    if (!gameRunning) return;
-    switch (e.code) {
-      case "ArrowLeft":
-      case "a":
-        e.preventDefault();
-        movePlayer("left");
-        break;
-      case "ArrowRight":
-      case "d":
-        e.preventDefault();
-        movePlayer("right");
-        break;
-      case "ArrowUp":
-      case "w":
-        e.preventDefault();
-        movePlayer("up");
-        break;
-      case "ArrowDown":
-      case "s":
-        e.preventDefault();
-        movePlayer("down");
-        break;
-      case "Space":
-        e.preventDefault();
-        spawnPokeball();
-        break;
-    }
-  };
-
-  document.addEventListener("keydown", handleKeyDown);
-
-  function isWall(x, y) {
-    const position = y * width + x;
-
-    if (position < 0 || position >= squares.length) return true;
-
-    const square = squares[position];
-    return !hasSquareBlockingElements(square);
+  function canMoveTo(position, squaresToCheck) {
+    if (position < 0 || position >= squaresToCheck.length) return false;
+    const square = squaresToCheck[position];
+    return hasSquareBlockingElements(square);
   }
 
   function checkPlayerEnemyCollision() {
+    const playerPosition = playerController.getPlayerPosition();
     const playerX = playerPosition % width;
     const playerY = Math.floor(playerPosition / width);
 
@@ -222,7 +69,25 @@ export function initGame() {
     }
   }
 
+  function isWall(x, y) {
+    const position = y * width + x;
+
+    if (position < 0 || position >= squares.length) return true;
+
+    const square = squares[position];
+    return !hasSquareBlockingElements(square);
+  }
+
   function spawnPokeball() {
+    if (!canThrowBall) return;
+    canThrowBall = false;
+    setTimeout(() => {
+      canThrowBall = true;
+    }, 750);
+
+    const playerPosition = playerController.getPlayerPosition();
+    const playerDirection = playerController.getPlayerDirection();
+
     let pokeballX = playerPosition % width;
     let pokeballY = Math.floor(playerPosition / width);
 
@@ -254,7 +119,7 @@ export function initGame() {
       pokeballElement.style.zIndex = 99999;
       grid.appendChild(pokeballElement);
 
-      const hit = checkPokeballEnemeyCollision(pokeballX, pokeballY);
+      const hit = checkPokeballEnemyCollision(pokeballX, pokeballY);
 
       if (hit) {
         pokeballElement.style.animation = "pokeball-hit 1.4s ease-out forwards";
@@ -274,7 +139,7 @@ export function initGame() {
     }
   }
 
-  function checkPokeballEnemeyCollision(pokeballX, pokeballY) {
+  function checkPokeballEnemyCollision(pokeballX, pokeballY) {
     for (let i = enemies.length - 1; i >= 0; i--) {
       const enemy = enemies[i];
       const enemyX = Math.round(enemy.x);
@@ -294,7 +159,7 @@ export function initGame() {
         score++;
 
         if (enemies.length === 0) {
-          initMapState(currentMapId).enemiesCleared = true;
+          mapController.initMapState(currentMapId).enemiesCleared = true;
         }
 
         updateDisplay();
@@ -308,13 +173,6 @@ export function initGame() {
     scoreDisplay.innerHTML = score;
     levelDisplay.innerHTML = currentMapId;
     enemyDisplay.innerHTML = enemies.length;
-  }
-
-  function canMoveTo(position) {
-    if (position < 0 || position >= squares.length) return false;
-
-    const square = squares[position];
-    return hasSquareBlockingElements(square);
   }
 
   function showEnemiesRemainingMessaage() {
@@ -348,45 +206,26 @@ export function initGame() {
 
   //MAP
   function switchMap(nextMapId, direction) {
+    if (enemies.length > 0) {
+      showEnemiesRemainingMessaage();
+      return;
+    }
+
     currentMapId = nextMapId;
-    const targetMap = getMapById(nextMapId);
-
-    switch (direction) {
-      case "door-t":
-        playerDirection = "up";
-        break;
-      case "door-b":
-        playerDirection = "down";
-        break;
-      case "door-l":
-        playerDirection = "left";
-        break;
-      case "door-r":
-        playerDirection = "right";
-        break;
-      default:
-        playerDirection = "down"; // fallback default
-    }
-
-    let startPos = targetMap.doorsFrom[direction]
-      ? targetMap.doorsFrom[direction]
-      : 41;
-    playerPosition = startPos;
-
-    createBoard();
-  }
-
-  function addMapElement(square, char, x, y) {
-    if (TILE_CLASSES[char]) {
-      square.classList.add(TILE_CLASSES[char]);
-    } else if (ENEMY_CHARS[char]) {
-      if (!initMapState(currentMapId).enemiesCleared) {
-        const enemy = createEnemy(ENEMY_CHARS[char], x, y, grid);
-        enemies.push(enemy);
-      }
-    }
-
-    // space = walkable, no class needed
+    mapController.switchMap(
+      nextMapId,
+      direction,
+      (id) => {
+        currentMapId = id;
+      },
+      playerController.setPlayerPosition,
+      playerController.setPlayerDirection,
+      playerController.createPlayer,
+      createBoardCallback,
+      () => {
+        enemies = [];
+      },
+    );
   }
 
   let lastTime = 0;
@@ -396,6 +235,7 @@ export function initGame() {
     const deltaTime = (currentTime - lastTime) / 1000;
     lastTime = currentTime;
     if (gameRunning && deltaTime < 0.1) {
+      playerController.updatePlayer(deltaTime);
       moveEnemies(enemies, deltaTime, isWall, width);
       checkPlayerEnemyCollision();
     }
@@ -410,20 +250,83 @@ export function initGame() {
     showTemporaryMessage(`${messages.GameOver} ${score}`, "white", 3000);
 
     setTimeout(() => {
-      for (const key in mapStates) delete mapStates[key];
+      mapController.resetMapStates();
 
       currentMapId = 1;
       grid.style.filter = "";
       grid.style.boxShadow = "";
-      playerPosition = 22;
-      playerDirection = "down";
+      playerController.resetPlayer();
       score = 0;
-      createBoard();
+      createBoardCallback();
     }, 3000);
   }
 
-  createBoard();
+  // Setup input handler
+  const handleKeyDown = (e) => {
+    if (!gameRunning) {
+      if (e.code === "Space") e.preventDefault();
+      return;
+    }
 
+    switch (e.code) {
+      case "ArrowLeft":
+      case "KeyA":
+        e.preventDefault();
+        TryMovePlayer("left");
+        break;
+      case "ArrowRight":
+      case "KeyD":
+        e.preventDefault();
+        TryMovePlayer("right");
+        break;
+      case "ArrowUp":
+      case "KeyW":
+        e.preventDefault();
+        TryMovePlayer("up");
+
+        break;
+      case "ArrowDown":
+      case "KeyS":
+        e.preventDefault();
+        TryMovePlayer("down");
+        break;
+      case "Space":
+        e.preventDefault();
+        spawnPokeball();
+        break;
+    }
+  };
+
+  document.addEventListener("keydown", handleKeyDown);
+
+  function TryMovePlayer(direction) {
+    playerController.movePlayer(
+      direction,
+      squares,
+      enemies,
+      gameRunning,
+      currentMapId,
+      switchMap,
+      winGame,
+    );
+  }
+
+  function winGame() {
+    gameRunning = false;
+    showTemporaryMessage(`${messages.YouWin} ${score}`, "green", 100000);
+    setTimeout(() => {
+      mapController.resetMapStates();
+
+      currentMapId = 1;
+      grid.style.filter = "";
+      grid.style.boxShadow = "";
+      playerController.resetPlayer();
+      score = 0;
+      createBoardCallback();
+    }, 100000);
+  }
+
+  createBoardCallback();
   animationId = requestAnimationFrame(gameLoop);
 
   return function cleanup() {

@@ -43,6 +43,9 @@ export function createEnemy(type, x, y, gridElement) {
     timer: cfg.timerRange ? Math.random() * cfg.timerRange : null,
     timerRange: cfg.timerRange,
     element,
+    animationFrame: 0,
+    animationSpeed: 0.05,
+    currentSpriteIndex: 0,
   };
 }
 
@@ -79,6 +82,20 @@ function moveEnemy(enemy, deltaTime, isWall, width) {
   }
 
   enemy.element.style[axis === "x" ? "left" : "top"] = `${enemy[axis] * 48}px`;
+
+  // Update animation frame
+  enemy.animationFrame += enemy.animationSpeed;
+  if (enemy.animationFrame >= 1) {
+    enemy.animationFrame = 0;
+  }
+
+  // Update sprite class based on animation frame (only when it changes)
+  const spriteIndex = Math.floor(enemy.animationFrame * 2);
+  if (spriteIndex !== enemy.currentSpriteIndex) {
+    enemy.currentSpriteIndex = spriteIndex;
+    enemy.element.className =
+      spriteIndex === 0 ? enemy.type : `${enemy.type}-2`;
+  }
 
   enemy.element.style.zIndex = 9 + Math.round(enemy.y) * width;
 }

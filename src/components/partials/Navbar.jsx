@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const sections = ["about", "tools", "fullstack", "games", "contact"];
+const sections = ["about", "tools", "fullstack", "games"];
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
@@ -8,6 +8,20 @@ export default function Navbar() {
 
   useEffect(() => {
     const observers = [];
+    const handleScroll = () => {
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Element is in viewport if it occupies any significant portion of the viewport
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          setActiveSection(id);
+        }
+      });
+    };
 
     sections.forEach((id) => {
       const el = document.getElementById(id);
@@ -19,14 +33,19 @@ export default function Navbar() {
             setActiveSection(id);
           }
         },
-        { threshold: 0.4 },
+        { threshold: 0.1 },
       );
 
       observer.observe(el);
       observers.push(observer);
     });
 
-    return () => observers.forEach((obs) => obs.disconnect());
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleLinkClick = () => setMenuOpen(false);
@@ -68,7 +87,7 @@ export default function Navbar() {
             className={activeSection === "fullstack" ? "nav-active" : ""}
             onClick={handleLinkClick}
           >
-            Full-stack
+            Web Projects
           </a>
         </li>
         <li>

@@ -39,7 +39,7 @@ export default function About() {
               </div>
 
               <div className="experience-item">
-                <span className="experience-title sphere-shape">3+</span>
+                <span className="experience-title sphere-shape">4</span>
                 <p className="experience-description">programming languages</p>
               </div>
 

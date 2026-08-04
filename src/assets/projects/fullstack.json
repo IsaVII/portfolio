@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Shop Inventory Management System",
+    "date": "2026/07",
+    "imageUrl": ["images/projects/Store_delivery/store_delivery_1.webp",
+      "images/projects/Store_delivery/store_delivery_2.webp",
+      "images/projects/Store_delivery/store_delivery_3.webp"
+    ],
+    "tags": ["HTML", "CSS", "JS","React","TailwindCSS", "Vite", "Python"],
+    "description": "Developed an inventory management system for our local village store to streamline the delivery acceptance process. The system enables staff to quickly search for products, verify incoming deliveries, replacing the previous manual paper-based workflow and significantly reducing the time required to process shipments.",
+    "bulletPoints": [
+      "User-Interface with web technologies connected to a Python backend.",
+      "Automatically extracts product information from supplier delivery PDFs and converts it into structured JSON data.",
+      "Implemented a fast search system that allows staff to instantly locate products when validating deliveries, replacing the previous paper-list process and greatly reducing manual work." 
+    ]
+  },
+
+  {
+    "id": 2,
+    "name": "Web-app - Roleplay Tavern",
+    "date": "2026/05 - 2026/07",
+    "imageUrl": [
+      "images/projects/app_rpg/App_rpg_rpg.webp",
+      "images/projects/app_rpg/App_rpg_editCharacter.webp",
+      "images/projects/app_rpg/App_rpg_usersettings.webp"
+    ],
+    "tags": ["HTML", "CSS", "JS", "React", "NodeJS", "TailwindCSS","ExpressJS", "MongoDB"],
+    "description": "App for creating written role play games with other users.",
+    "bulletPoints": [
+      "Web app with routing.",
+      "Encrypted User authentication.",
+      "Data storage with MongoDB incl. uploading, changing and deleting data.",
+      "Practicing React and ExpressJS. Final version mainly with React."
+    ]
+  },
+    {
+    "id": 3,
+    "name": "Portfolio Website",
+    "date": "2026/06",
+    "imageUrl": ["images/projects/portfolio/Portfolio.webp"],
+    "tags": ["HTML", "CSS", "JS", "React", "Vite"],
+ "description": "A responsive, single-page portfolio, featuring a scroll-spy navigation system, JSON-driven project data for easy content updates, and a custom JavaScript game built from scratch and embedded directly into the page.",
+    "bulletPoints": [
+      "Responsive design with a scroll-spy navigation system based on an intersection observer API.",
+      "Styled with Tailwind CSS and custom CSS for a fully responsive layout across mobile and desktop.",
+      "Showcase of projects based on JSON data.",
+      "Built a custom mini-game in vanilla JavaScript and embedded it as an interactive React component."
+    ]
+  }
+]

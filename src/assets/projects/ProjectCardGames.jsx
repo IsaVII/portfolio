@@ -46,22 +46,8 @@ export default function ProjectCardGames({ project, index }) {
       {/* Mobile title */}
       <h2 className="project-title-mobile project-title">{project.name}</h2>
 
-      {/* Project link */}
-      <div className="project-link">
-        {project.gameUrl ? (
-          <a href={project.gameUrl} target="_blank" rel="noopener noreferrer">
-            <Icon name={project.gamePlattform} />
-          </a>
-        ) : (
-          ""
-        )}
-      </div>
-
       {/* Images */}
       <div className="project-images">
-        <div className={`thumbnail ${project.id === 4 ? "thumbnail-up" : ""}`}>
-          <img src={`${BASE}${project.thumbnail}`} alt={project.name} />
-        </div>
         <div className="carousel">
           {hasMultipleImages && <button onClick={prevImage}>◀</button>}
 
@@ -84,11 +70,24 @@ export default function ProjectCardGames({ project, index }) {
       <div className="project-content">
         {/* Desktop title */}
         <div className="project-title-date-combination">
-          <h2 className="project-title-desktop project-title">
-            {project.name}
-          </h2>
+          <div className="title-date-wrapper">
+            <h2 className="project-title-desktop project-title">
+              {project.name}
+            </h2>
+            <p className="project-date">{project.date}</p>
+          </div>
 
-          <p className="project-date">{project.date}</p>
+          {project.gameUrl && (
+            <div className="projekt_url">
+              <a
+                href={project.gameUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="Steam" />{" "}
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Base data */}

@@ -3,11 +3,11 @@ import { useState } from "react";
 const BASE = import.meta.env.BASE_URL;
 
 const unityImages = [
-  "images/projects/Unity/IdleHorrorStory.jpg",
-  "images/projects/Unity/MH_DecoMode.png",
-  "images/projects/Unity/Neverrift_Image_1.png",
-  "images/projects/Unity/Bubbles.png",
-  "images/projects/Unity/Unicorn.png",
+  "images/projects/Unity/IdleHorrorStory.webp",
+  "images/projects/Unity/MH_DecoMode.webp",
+  "images/projects/Unity/Neverrift_Image_1.webp",
+  "images/projects/Unity/Bubbles.webp",
+  "images/projects/Unity/Unicorn.webp",
 ];
 
 export default function UnityProjects() {
@@ -26,7 +26,7 @@ export default function UnityProjects() {
   };
 
   return (
-    <section className="projects section" id="unity-projects">
+    <section className="section" id="unity-projects">
       <h2 className="project-title">Unity Projects</h2>
       2018-2023: diverse Unity projects, both solo and in teams, including game
       jams and prototypes.

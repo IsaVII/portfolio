@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { initGame } from "./game.js";
+import { icons } from "./../icons.jsx";
+
+const Icon = ({ name }) => icons[name] ?? null;
 
 export default function Game() {
   useEffect(() => {
@@ -31,8 +34,16 @@ export default function Game() {
         </div>
 
         <div id="grid"></div>
-        <div className="text">
+        <div className="text lowerText">
           use arrow keys to move, SPACE to catch Pokémon
+          <br />
+          <div className="flex flex-row lowerText ">
+            --- made with
+            <span id="javascript-icon">
+              <Icon name="Javascript" className="" />
+            </span>{" "}
+            ---
+          </div>
         </div>
       </div>
     </>

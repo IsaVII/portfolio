@@ -30,21 +30,18 @@ function App() {
   return (
     <>
       <div id="tsparticles" />
-
       <section id="header">
         <Header />
       </section>
-
       <section id="center">
         <About />
         <Tools />
         <Fullstack />
         <Games />
       </section>
-
-      <section id="footer">
+      <footer id="footer">
         <Footer />
-      </section>
+      </footer>
     </>
   );
 }

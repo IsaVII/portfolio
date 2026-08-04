@@ -35,34 +35,20 @@
   --border-panel: 30px;
 }
 
-/* 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-} */
+html {
+  scroll-padding-top: 6rem;
+  margin: 0;
+  padding: 0;
+}
 
 
 body {
   background-color: var(--bg-color);
   color: var(--text);
   font-family: var(--font_body_family);
-
+  justify-self: center;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -95,7 +81,6 @@ b {
 
 .section {
   text-align: center;
-  margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -105,6 +90,7 @@ b {
   backdrop-filter: blur(12px);
   border-radius: var(--border-radius);
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5);
+
 
 }
 
@@ -263,6 +249,36 @@ nav ul li a.nav-active {
   align-items: center;
 }
 
+#cv-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+#github-button {
+  background-color: var(--btnColor);
+  color: var(--text);
+  padding: 0.4rem 1rem;
+  margin: 0.7rem 1rem;
+  border-radius: var(--border-radius);
+  max-width: var(--btn-max-width);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+#github-button-text {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+#github-button:hover {
+  background-color: var(--btnColorHover);
+}
+
 #cv-button-text {
   font-size: var(--font-size-base);
   padding-right: 10px;
@@ -320,6 +336,10 @@ nav ul li a.nav-active {
 */
 
 @media (max-width: 768px) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+
   #header {
     height: 3.5rem;
     padding: 0 0.5rem;
@@ -380,6 +400,15 @@ nav ul li a.nav-active {
   #cv-button-text {
     font-size: 0.85rem;
   }
+
+  #github-button {
+    padding: 0.3rem 0.7rem;
+    margin: 0.4rem 0.3rem;
+  }
+
+  #github-button-text {
+    font-size: 0.85rem;
+  }
 }
 
 
@@ -387,6 +416,7 @@ nav ul li a.nav-active {
 
 /* **********  CENTER   *********   */
 #center {
+  box-sizing: border-box;
   margin-top: 5em;
   position: relative;
   z-index: 1;
@@ -395,15 +425,42 @@ nav ul li a.nav-active {
   align-items: center;
   gap: 2rem;
   padding: 4rem;
+  width: calc(100vw - 8rem);
 }
 
 
 /* **********  ABOUT   *********   */
-#about {
-  min-width: 60%;
+
+
+
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-color-cards);
+  gap: 3rem;
+  margin-top: 1.5rem;
+  border-radius: var(--border-radius);
+
 }
 
 
+
+
+.container-left,
+.container-right {
+  flex: 1;
+  max-width: 550px;
+  width: 100%;
+  padding: 1.5rem;
+  text-align: left;
+
+}
+
+.header {
+  font-size: var(--font-size-lg);
+  font-family: var(--font_header_family);
+  font-weight: 700;
+}
 
 .tab {
   background-color: rgba(167, 190, 255, 0.1);
@@ -415,39 +472,13 @@ nav ul li a.nav-active {
   font-size: var(--font-size-lg);
   font-weight: 600;
   font-family: var(--font_header_family);
+
 }
 
 .tab i {
   color: var(--text_highlight_secondary);
-}
 
-.about-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 0;
-  margin-top: 1.5rem;
 }
-
-.container-left {
-  flex: 1;
-  padding: 1.5rem;
-  width: 470px;
-}
-
-.container-right {
-  flex: 1;
-  padding: 1.5rem;
-  max-width: 550px;
-  text-align: left;
-}
-
-.header {
-  font-size: var(--font-size-lg);
-  font-family: var(--font_header_family);
-  font-weight: 700;
-}
-
 
 .experience-wrapper {
   padding-top: 2rem;
@@ -464,6 +495,7 @@ nav ul li a.nav-active {
   gap: 0.75rem;
   text-align: center;
 }
+
 
 
 @media (max-width: 1000px) {
@@ -492,9 +524,7 @@ nav ul li a.nav-active {
 
 
 /* **********  TOOLS   *********   */
-#tools {
-  width: 70%;
-}
+
 
 .tools-list {
   display: flex;
@@ -511,30 +541,19 @@ nav ul li a.nav-active {
 }
 
 /* **********  FULLSTACK   *********   */
-
-#fullstack {
-
-  width: 70%;
-
-}
-
+#fullstack {}
 
 /* **********  GAMES   *********   */
-#games {
-  width: 70%;
-}
+#games {}
 
 /* **********  FOOTER   *********   */
 #footer {
+  position: relative;
   display: flex;
-  padding: 1rem 0;
-
-  width: 100%;
-  max-width: 100%;
-  backdrop-filter: blur(12px);
-  justify-self: center;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  backdrop-filter: blur(12px);
   background-color: var(--bg-color-cards);
 }
 
@@ -553,8 +572,11 @@ nav ul li a.nav-active {
 }
 
 @media (max-width: 1200px) {
+
   #center {
     padding: 4rem 0;
+
+    width: 100%;
   }
 
   .section {

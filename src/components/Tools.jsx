@@ -20,6 +20,11 @@ export default function Tools() {
           </span>
 
           <span className="tool-item-pair">
+            <Icon name="Java" />
+            <span className="tool-item">Java*</span>
+          </span>
+
+          <span className="tool-item-pair">
             <Icon name="Python" />
             <span className="tool-item">Python*</span>
           </span>
