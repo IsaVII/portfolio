@@ -67,6 +67,31 @@ function ProjectCard({ project, index }) {
 
           <p className="project-date">{project.date}</p>
         </div>
+        <div className="project-url">
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link"
+            >
+              {project.url}
+            </a>
+          )}
+          {project.urlComment && (
+            <>
+              <div
+                className="url-comment pb-2"
+                dangerouslySetInnerHTML={{
+                  __html: project.urlComment.replace(
+                    /TestUser/g,
+                    "<b><i>TestUser</i></b>",
+                  ),
+                }}
+              />
+            </>
+          )}
+        </div>
         <div className="project-tags">
           {project.tags.map((tag) => {
             const style = TAG_COLORS[tag] ?? { bg: "#e5e5e5", color: "#000" };

@@ -20,6 +20,8 @@
     "id": 2,
     "name": "Web-app - Roleplay Tavern",
     "date": "2026/05 - 2026/07",
+    "url": "https://rpg-app-eksl.onrender.com/",
+    "urlComment": "Test user login: <i>TestUser</i> | Password: TestUser",
     "imageUrl": [
       "images/projects/app_rpg/App_rpg_rpg.webp",
       "images/projects/app_rpg/App_rpg_editCharacter.webp",
@@ -33,6 +35,8 @@
       "Data storage with MongoDB incl. uploading, changing and deleting data.",
       "Practicing React and ExpressJS. Final version mainly with React."
     ]
+  
+
   },
     {
     "id": 3,

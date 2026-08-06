@@ -236,6 +236,38 @@
     }
 }
 
+/* ---------- URL and Comment ---------- */
+
+.project-url {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-url a {
+    color: var(--link);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    width: fit-content;
+}
+
+.project-url a:hover {
+    color: var(--linkHover);
+}
+
+.url-comment {
+    color: var(--text);
+}
+
+.url-comment b {
+    font-weight: 700;
+    color: var(--text_highlight);
+}
+
+.url-comment i {
+    font-style: italic;
+}
+
 @media (max-width: 870px) {
 
     .projects {
