@@ -1,14 +1,33 @@
 [
-  {
+    {
     "id": 1,
+  "name": "Real-Time Collaborative Whiteboard",
+  "date": "2026/08",
+  "url": "https://whiteboard-dlj7.onrender.com/",
+  "imageUrl": [
+    "images/projects/Whiteboard/whiteboard-1.webp",
+    "images/projects/Whiteboard/whiteboard-2.webp",
+    "images/projects/Whiteboard/whiteboard-3.webp"
+  ],
+  "tags": ["HTML", "CSS", "JS", "React", "Redux", "NodeJS", "ExpressJS", "Socket.io", "MongoDB", "TailwindCSS", "Vite"],
+  "description": "A real-time collaborative whiteboard where multiple anonymous users can draw, add shapes and text, and edit the same board simultaneously, with every change synced live across all connected clients.",
+  "bulletPoints": [
+    "Real-time multi-user sync via WebSockets (Socket.io): live cursors, element updates and a per-board user list broadcast instantly to everyone connected.",
+    "No accounts needed — each visitor is assigned an anonymous name and color for the session.",
+    "Board state persisted to MongoDB with debounced saves, so rapid edits don't hammer the database.",
+    "Single Express service serves both the API/WebSocket layer and the built React frontend, deployed as one combined Render web service."
+  ]
+  },
+  {
+    "id": 2,
     "name": "Shop Inventory Management System",
-    "date": "2026/07",
+    "date": "2026/07 - 2026/08",
     "imageUrl": ["images/projects/Store_delivery/store_delivery_1.webp",
       "images/projects/Store_delivery/store_delivery_2.webp",
       "images/projects/Store_delivery/store_delivery_3.webp"
     ],
     "tags": ["HTML", "CSS", "JS","React","TailwindCSS", "Vite", "Python"],
-    "description": "Developed an inventory management system for our local village store to streamline the delivery acceptance process. The system enables staff to quickly search for products, verify incoming deliveries, replacing the previous manual paper-based workflow and significantly reducing the time required to process shipments.",
+    "description": "An inventory management system for our local village store to streamline the delivery acceptance process. The system enables staff to quickly search for products, verify incoming deliveries, replacing the previous manual paper-based workflow and significantly reducing the time required to process shipments.",
     "bulletPoints": [
       "User-Interface with web technologies connected to a Python backend.",
       "Automatically extracts product information from supplier delivery PDFs and converts it into structured JSON data.",
@@ -17,7 +36,7 @@
   },
 
   {
-    "id": 2,
+    "id": 3,
     "name": "Web-app - Roleplay Tavern",
     "date": "2026/05 - 2026/07",
     "url": "https://rpg-app-eksl.onrender.com/",
@@ -39,7 +58,7 @@
 
   },
     {
-    "id": 3,
+    "id": 4,
     "name": "Portfolio Website",
     "date": "2026/06",
     "imageUrl": ["images/projects/portfolio/Portfolio.webp"],
