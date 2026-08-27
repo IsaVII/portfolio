@@ -18,8 +18,22 @@
     "Single Express service serves both the API/WebSocket layer and the built React frontend, deployed as one combined Render web service."
   ]
   },
-  {
+    {
     "id": 2,
+    "name": "WebDev Learning Playground",
+    "date": "2026/08",
+    "url": "https://IsaVII.github.io/WebDev-Playground",
+    "imageUrl": ["images/projects/WebDevPlayground/WebDevPlayground_Title.webp"],
+    "tags": ["HTML", "CSS", "JS", "React", "Redux", "TailwindCSS", "Vite"],
+    "description": "A frontend-only, interactive learning platform for mastering full-stack web development concepts through structured lessons, live demos, and progress tracking; covering JavaScript, TypeScript, Git, HTTP & APIs, Node.js, React, Redux, and Testing.",
+    "bulletPoints": [
+      "Data-driven content: every topic, lesson, and cheat sheet is defined in JSON, making it easy to add or update material.",
+      "Interactive, editable demos (counters, HTTP simulators, event-loop visualizers) show concepts running live in the browser.",
+      "Progress tracking with per-topic checkboxes persisted locally via cookies."
+    ]
+  },
+  {
+    "id": 3,
     "name": "Shop Inventory Management System",
     "date": "2026/07 - 2026/08",
     "imageUrl": ["images/projects/Store_delivery/store_delivery_1.webp",
@@ -36,7 +50,7 @@
   },
 
   {
-    "id": 3,
+    "id": 4,
     "name": "Web-app - Roleplay Tavern",
     "date": "2026/05 - 2026/07",
     "url": "https://rpg-app-eksl.onrender.com/",
@@ -58,7 +72,7 @@
 
   },
     {
-    "id": 4,
+    "id": 5,
     "name": "Portfolio Website",
     "date": "2026/06",
     "imageUrl": ["images/projects/portfolio/Portfolio.webp"],
@@ -71,4 +85,5 @@
       "Built a custom mini-game in vanilla JavaScript and embedded it as an interactive React component."
     ]
   }
+
 ]
